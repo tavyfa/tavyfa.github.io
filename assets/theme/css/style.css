@@ -466,7 +466,7 @@ nav .mbr-section-btn {
 
 @media (max-width: 500px) {
   .mbr-arrow-up {
-    left: 50%;
+    left: 85%;
     right: auto;
     transform: translateX(-50%) rotate(180deg);
     -webkit-transform: translateX(-50%) rotate(180deg);
