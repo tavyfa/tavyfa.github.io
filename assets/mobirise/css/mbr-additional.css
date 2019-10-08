@@ -1906,7 +1906,7 @@ body {
 }
 .cid-rDWhGRgJrP {
   padding-top: 15px;
-  padding-bottom: 45px;
+  padding-bottom: 30px;
   background-color: #ffffff;
 }
 .cid-rDWhGRgJrP h2 {
@@ -1951,9 +1951,27 @@ body {
 .cid-rDWhGRgJrP P {
   text-align: left;
 }
+.cid-rEhZAZkrtu {
+  padding-top: 30px;
+  padding-bottom: 15px;
+  background-image: url("../../../assets/images/mbr-1-1920x1275.jpg");
+}
+.cid-rEhZAZkrtu .mbr-text {
+  color: #767676;
+}
+.cid-rEhZAZkrtu h4 {
+  text-align: center;
+}
+.cid-rEhZAZkrtu p {
+  text-align: center;
+}
+.cid-rEhZAZkrtu .card-img span {
+  font-size: 96px;
+  color: #149dcc;
+}
 .cid-rEd6tEAzO6 {
-  padding-top: 15px;
-  padding-bottom: 30px;
+  padding-top: 30px;
+  padding-bottom: 45px;
   position: relative;
   background-color: #ffffff;
 }
