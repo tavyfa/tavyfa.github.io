@@ -263,10 +263,6 @@ figure[mbr-media-size] {
   max-width: 100%;
 }
 
-.mbr-figure img, .card-img img {
-  width: 100%;
-}
-
 @media (max-width: 991px) {
   .media-size-item {
     width: auto !important;
