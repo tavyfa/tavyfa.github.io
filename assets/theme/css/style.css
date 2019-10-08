@@ -264,8 +264,7 @@ figure[mbr-media-size] {
 }
 
 .mbr-figure img, .card-img img {
-  height: 125;
-  width: 125;
+  width: 100%;
 }
 
 @media (max-width: 991px) {
