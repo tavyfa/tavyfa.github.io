@@ -1,0 +1,457 @@
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.4
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[+] URL: http://sts.sumy.ua/ [91.200.41.228]
+[+] Started: Tue Jul 28 12:09:20 2020
+
+Interesting Finding(s):
+
+[+] Headers
+ | Interesting Entry: Server: nginx/1.12.2
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[+] http://sts.sumy.ua/robots.txt
+ | Found By: Robots Txt (Aggressive Detection)
+ | Confidence: 100%
+
+[+] XML-RPC seems to be enabled: http://sts.sumy.ua/xmlrpc.php
+ | Found By: Link Tag (Passive Detection)
+ | Confidence: 100%
+ | Confirmed By: Direct Access (Aggressive Detection), 100% confidence
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access
+
+[+] http://sts.sumy.ua/readme.html
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[+] The external WP-Cron seems to be enabled: http://sts.sumy.ua/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+[+] WordPress version 5.2.4 identified (Insecure, released on 2019-10-14).
+ | Found By: Rss Generator (Passive Detection)
+ |  - http://sts.sumy.ua/feed, <generator>https://wordpress.org/?v=5.2.4</generator>
+ |  - http://sts.sumy.ua/comments/feed, <generator>https://wordpress.org/?v=5.2.4</generator>
+ |
+ | [!] 16 vulnerabilities identified:
+ |
+ | [!] Title: WordPress <= 5.3 - Authenticated Improper Access Controls in REST API
+ |     Fixed in: 5.2.5
+ |     References:
+ |      - https://wpvulndb.com/vulnerabilities/9973
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-20043
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-16788
+ |      - https://wordpress.org/news/2019/12/wordpress-5-3-1-security-and-maintenance-release/
+ |      - https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-g7rg-hchx-c2gw
+ |
+ | [!] Title: WordPress <= 5.3 - Authenticated Stored XSS via Crafted Links
+ |     Fixed in: 5.2.5
+ |     References:
+ |      - https://wpvulndb.com/vulnerabilities/9975
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-16773
+ |      - https://wordpress.org/news/2019/12/wordpress-5-3-1-security-and-maintenance-release/
+ |      - https://hackerone.com/reports/509930
+ |      - https://github.com/WordPress/wordpress-develop/commit/1f7f3f1f59567e2504f0fbebd51ccf004b3ccb1d
+ |      - https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-xvg2-m2f4-83m7
+ |
+ | [!] Title: WordPress <= 5.3 - Authenticated Stored XSS via Block Editor Content
+ |     Fixed in: 5.2.5
+ |     References:
+ |      - https://wpvulndb.com/vulnerabilities/9976
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-16781
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-16780
+ |      - https://wordpress.org/news/2019/12/wordpress-5-3-1-security-and-maintenance-release/
+ |      - https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-pg4x-64rh-3c9v
+ |
+ | [!] Title: WordPress <= 5.3 - wp_kses_bad_protocol() Colon Bypass
+ |     Fixed in: 5.2.5
+ |     References:
+ |      - https://wpvulndb.com/vulnerabilities/10004
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-20041
+ |      - https://wordpress.org/news/2019/12/wordpress-5-3-1-security-and-maintenance-release/
+ |      - https://github.com/WordPress/wordpress-develop/commit/b1975463dd995da19bb40d3fa0786498717e3c53
+ |
+ | [!] Title: WordPress < 5.4.1 - Password Reset Tokens Failed to Be Properly Invalidated
+ |     Fixed in: 5.2.6
+ |     References:
+ |      - https://wpvulndb.com/vulnerabilities/10201
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11027
+ |      - https://wordpress.org/news/2020/04/wordpress-5-4-1/
+ |      - https://core.trac.wordpress.org/changeset/47634/
+ |      - https://www.wordfence.com/blog/2020/04/unpacking-the-7-vulnerabilities-fixed-in-todays-wordpress-5-4-1-security-update/
+ |      - https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-ww7v-jg8c-q6jw
+ |
+ | [!] Title: WordPress < 5.4.1 - Unauthenticated Users View Private Posts
+ |     Fixed in: 5.2.6
+ |     References:
+ |      - https://wpvulndb.com/vulnerabilities/10202
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11028
+ |      - https://wordpress.org/news/2020/04/wordpress-5-4-1/
+ |      - https://core.trac.wordpress.org/changeset/47635/
+ |      - https://www.wordfence.com/blog/2020/04/unpacking-the-7-vulnerabilities-fixed-in-todays-wordpress-5-4-1-security-update/
+ |      - https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-xhx9-759f-6p2w
+ |
+ | [!] Title: WordPress < 5.4.1 - Authenticated Cross-Site Scripting (XSS) in Customizer
+ |     Fixed in: 5.2.6
+ |     References:
+ |      - https://wpvulndb.com/vulnerabilities/10203
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11025
+ |      - https://wordpress.org/news/2020/04/wordpress-5-4-1/
+ |      - https://core.trac.wordpress.org/changeset/47633/
+ |      - https://www.wordfence.com/blog/2020/04/unpacking-the-7-vulnerabilities-fixed-in-todays-wordpress-5-4-1-security-update/
+ |      - https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-4mhg-j6fx-5g3c
+ |
+ | [!] Title: WordPress < 5.4.1 - Authenticated Cross-Site Scripting (XSS) in Search Block
+ |     Fixed in: 5.2.6
+ |     References:
+ |      - https://wpvulndb.com/vulnerabilities/10204
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11030
+ |      - https://wordpress.org/news/2020/04/wordpress-5-4-1/
+ |      - https://core.trac.wordpress.org/changeset/47636/
+ |      - https://www.wordfence.com/blog/2020/04/unpacking-the-7-vulnerabilities-fixed-in-todays-wordpress-5-4-1-security-update/
+ |      - https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-vccm-6gmc-qhjh
+ |
+ | [!] Title: WordPress < 5.4.1 - Cross-Site Scripting (XSS) in wp-object-cache
+ |     Fixed in: 5.2.6
+ |     References:
+ |      - https://wpvulndb.com/vulnerabilities/10205
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11029
+ |      - https://wordpress.org/news/2020/04/wordpress-5-4-1/
+ |      - https://core.trac.wordpress.org/changeset/47637/
+ |      - https://www.wordfence.com/blog/2020/04/unpacking-the-7-vulnerabilities-fixed-in-todays-wordpress-5-4-1-security-update/
+ |      - https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-568w-8m88-8g2c
+ |
+ | [!] Title: WordPress < 5.4.1 - Authenticated Cross-Site Scripting (XSS) in File Uploads
+ |     Fixed in: 5.2.6
+ |     References:
+ |      - https://wpvulndb.com/vulnerabilities/10206
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11026
+ |      - https://wordpress.org/news/2020/04/wordpress-5-4-1/
+ |      - https://core.trac.wordpress.org/changeset/47638/
+ |      - https://www.wordfence.com/blog/2020/04/unpacking-the-7-vulnerabilities-fixed-in-todays-wordpress-5-4-1-security-update/
+ |      - https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-3gw2-4656-pfr2
+ |
+ | [!] Title: WordPress < 5.4.2 - Authenticated XSS in Block Editor
+ |     Fixed in: 5.2.7
+ |     References:
+ |      - https://wpvulndb.com/vulnerabilities/10263
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-4046
+ |      - https://wordpress.org/news/2020/06/wordpress-5-4-2-security-and-maintenance-release/
+ |      - https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-rpwf-hrh2-39jf
+ |      - https://pentest.co.uk/labs/research/subtle-stored-xss-wordpress-core/
+ |      - https://www.youtube.com/watch?v=tCh7Y8z8fb4
+ |
+ | [!] Title: WordPress < 5.4.2 - Authenticated XSS via Media Files
+ |     Fixed in: 5.2.7
+ |     References:
+ |      - https://wpvulndb.com/vulnerabilities/10264
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-4047
+ |      - https://wordpress.org/news/2020/06/wordpress-5-4-2-security-and-maintenance-release/
+ |      - https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-8q2w-5m27-wm27
+ |
+ | [!] Title: WordPress < 5.4.2 - Open Redirection
+ |     Fixed in: 5.2.7
+ |     References:
+ |      - https://wpvulndb.com/vulnerabilities/10265
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-4048
+ |      - https://wordpress.org/news/2020/06/wordpress-5-4-2-security-and-maintenance-release/
+ |      - https://github.com/WordPress/WordPress/commit/10e2a50c523cf0b9785555a688d7d36a40fbeccf
+ |      - https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-q6pw-gvf4-5fj5
+ |
+ | [!] Title: WordPress < 5.4.2 - Authenticated XSS via Theme Upload
+ |     Fixed in: 5.2.7
+ |     References:
+ |      - https://wpvulndb.com/vulnerabilities/10266
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-4049
+ |      - https://wordpress.org/news/2020/06/wordpress-5-4-2-security-and-maintenance-release/
+ |      - https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-87h4-phjv-rm6p
+ |
+ | [!] Title: WordPress < 5.4.2 - Misuse of set-screen-option Leading to Privilege Escalation
+ |     Fixed in: 5.2.7
+ |     References:
+ |      - https://wpvulndb.com/vulnerabilities/10267
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-4050
+ |      - https://wordpress.org/news/2020/06/wordpress-5-4-2-security-and-maintenance-release/
+ |      - https://github.com/WordPress/WordPress/commit/dda0ccdd18f6532481406cabede19ae2ed1f575d
+ |      - https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-4vpv-fgg2-gcqc
+ |
+ | [!] Title: WordPress < 5.4.2 - Disclosure of Password-Protected Page/Post Comments
+ |     Fixed in: 5.2.7
+ |     References:
+ |      - https://wpvulndb.com/vulnerabilities/10268
+ |      - https://wordpress.org/news/2020/06/wordpress-5-4-2-security-and-maintenance-release/
+ |      - https://github.com/WordPress/WordPress/commit/c075eec24f2f3214ab0d0fb0120a23082e6b1122
+
+[+] WordPress theme in use: videopro
+ | Location: http://sts.sumy.ua/wp-content/themes/videopro/
+ | Readme: http://sts.sumy.ua/wp-content/themes/videopro/README.txt
+ | Style URL: http://sts.sumy.ua/wp-content/themes/videopro/style.css
+ | Style Name: VideoPro
+ | Style URI: http://www.theme-junkie.com
+ | Description: WordPress Video Theme by <a href="http://www.theme-junkie.com/">Theme Junkie</a>....
+ | Author: Theme Junkie
+ | Author URI: http://www.theme-junkie.com
+ |
+ | Found By: Css Style In Homepage (Passive Detection)
+ | Confirmed By: Css Style In 404 Page (Passive Detection)
+ |
+ | Version: 1.0.1 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - http://sts.sumy.ua/wp-content/themes/videopro/style.css, Match: 'Version: 1.0.1'
+
+[+] Enumerating All Plugins (via Passive Methods)
+[+] Checking Plugin Versions (via Passive and Aggressive Methods)
+
+[i] Plugin(s) Identified:
+
+[+] all-in-one-seo-pack
+ | Location: http://sts.sumy.ua/wp-content/plugins/all-in-one-seo-pack/
+ | Last Updated: 2020-07-15T13:05:00.000Z
+ | [!] The version is out of date, the latest version is 3.6.2
+ |
+ | Found By: Comment (Passive Detection)
+ |
+ | [!] 1 vulnerability identified:
+ |
+ | [!] Title: All in One SEO Pack < 3.6.2 - Authenticated Stored Cross-Site Scripting
+ |     Fixed in: 3.6.2
+ |     References:
+ |      - https://wpvulndb.com/vulnerabilities/10320
+ |      - https://www.wordfence.com/blog/2020/07/2-million-users-affected-by-vulnerability-in-all-in-one-seo-pack/
+ |      - https://www.youtube.com/watch?v=2fqMM6HRV5s
+ |
+ | Version: 3.6.1 (80% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - http://sts.sumy.ua/wp-content/plugins/all-in-one-seo-pack/readme.txt
+
+[+] contact-form-7
+ | Location: http://sts.sumy.ua/wp-content/plugins/contact-form-7/
+ | Last Updated: 2020-07-04T14:20:00.000Z
+ | [!] The version is out of date, the latest version is 5.2
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | Version: 5.1.9 (100% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - http://sts.sumy.ua/wp-content/plugins/contact-form-7/readme.txt
+ | Confirmed By: Readme - ChangeLog Section (Aggressive Detection)
+ |  - http://sts.sumy.ua/wp-content/plugins/contact-form-7/readme.txt
+
+[+] democracy-poll
+ | Location: http://sts.sumy.ua/wp-content/plugins/democracy-poll/
+ | Latest Version: 5.5.6.3 (up to date)
+ | Last Updated: 2019-06-06T17:40:00.000Z
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | Version: 5.5.6.3 (50% confidence)
+ | Found By: Readme - ChangeLog Section (Aggressive Detection)
+ |  - http://sts.sumy.ua/wp-content/plugins/democracy-poll/readme.txt
+
+[+] disqus-comment-system
+ | Location: http://sts.sumy.ua/wp-content/plugins/disqus-comment-system/
+ | Latest Version: 3.0.17 (up to date)
+ | Last Updated: 2019-03-04T19:55:00.000Z
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | Version: 3.0.17 (100% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - http://sts.sumy.ua/wp-content/plugins/disqus-comment-system/README.txt
+ | Confirmed By: Readme - ChangeLog Section (Aggressive Detection)
+ |  - http://sts.sumy.ua/wp-content/plugins/disqus-comment-system/README.txt
+
+[+] djd-site-post
+ | Location: http://sts.sumy.ua/wp-content/plugins/djd-site-post/
+ | Latest Version: 0.9.3 (up to date)
+ | Last Updated: 2014-02-24T10:21:00.000Z
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | Version: 0.9.3 (100% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - http://sts.sumy.ua/wp-content/plugins/djd-site-post/README.txt
+ | Confirmed By: Readme - ChangeLog Section (Aggressive Detection)
+ |  - http://sts.sumy.ua/wp-content/plugins/djd-site-post/README.txt
+
+[+] google-analytics-for-wordpress
+ | Location: http://sts.sumy.ua/wp-content/plugins/google-analytics-for-wordpress/
+ | Latest Version: 7.11.0 (up to date)
+ | Last Updated: 2020-07-01T14:44:00.000Z
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By:
+ |  Urls In 404 Page (Passive Detection)
+ |  Monster Insights Comment (Passive Detection)
+ |
+ | Version: 7.11.0 (100% confidence)
+ | Found By: Monster Insights Comment (Passive Detection)
+ |  - http://sts.sumy.ua/, Match: 'Google Analytics by MonsterInsights plugin v7.11.0 -'
+ | Confirmed By: Readme - Stable Tag (Aggressive Detection)
+ |  - http://sts.sumy.ua/wp-content/plugins/google-analytics-for-wordpress/readme.txt
+
+[+] google-site-kit
+ | Location: http://sts.sumy.ua/wp-content/plugins/google-site-kit/
+ | Last Updated: 2020-07-17T06:46:00.000Z
+ | [!] The version is out of date, the latest version is 1.12.0
+ |
+ | Found By: Meta Tag (Passive Detection)
+ |
+ | Version: 1.11.1 (100% confidence)
+ | Found By: Meta Tag (Passive Detection)
+ |  - http://sts.sumy.ua/, Match: 'Site Kit by Google 1.11.1'
+ | Confirmed By: Readme - Stable Tag (Aggressive Detection)
+ |  - http://sts.sumy.ua/wp-content/plugins/google-site-kit/readme.txt
+
+[+] jetpack
+ | Location: http://sts.sumy.ua/wp-content/plugins/jetpack/
+ | Last Updated: 2020-07-14T13:58:00.000Z
+ | [!] The version is out of date, the latest version is 8.7.1
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | Version: 8.3 (80% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - http://sts.sumy.ua/wp-content/plugins/jetpack/readme.txt
+
+[+] wp-pagenavi
+ | Location: http://sts.sumy.ua/wp-content/plugins/wp-pagenavi/
+ | Latest Version: 2.93.3 (up to date)
+ | Last Updated: 2020-03-29T04:29:00.000Z
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | Version: 2.93.3 (80% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - http://sts.sumy.ua/wp-content/plugins/wp-pagenavi/readme.txt
+
+[+] wp-super-cache
+ | Location: http://sts.sumy.ua/wp-content/plugins/wp-super-cache/
+ | Latest Version: 1.7.1 (up to date)
+ | Last Updated: 2020-07-20T12:09:00.000Z
+ |
+ | Found By: Comment (Passive Detection)
+ |
+ | Version: 1.7.1 (80% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - http://sts.sumy.ua/wp-content/plugins/wp-super-cache/readme.txt
+
+[+] zero-spam
+ | Location: http://sts.sumy.ua/wp-content/plugins/zero-spam/
+ | Last Updated: 2020-07-27T16:52:00.000Z
+ | [!] The version is out of date, the latest version is 4.8.1
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Urls In 404 Page (Passive Detection)
+ |
+ | Version: 3.1.1 (80% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - http://sts.sumy.ua/wp-content/plugins/zero-spam/readme.txt
+
+[+] Enumerating Vulnerable Themes (via Passive and Aggressive Methods)
+
+ Checking Known Locations -: |=================================================|
+[+] Checking Theme Versions (via Passive and Aggressive Methods)
+
+[i] No themes Found.
+
+[+] Enumerating Timthumbs (via Passive and Aggressive Methods)
+
+ Checking Known Locations -: |=================================================|
+
+[i] No Timthumbs Found.
+
+[+] Enumerating Config Backups (via Passive and Aggressive Methods)
+
+ Checking Config Backups -: |==================================================|
+
+[i] No Config Backups Found.
+
+[+] Enumerating DB Exports (via Passive and Aggressive Methods)
+
+ Checking DB Exports -: |======================================================|
+
+[i] No DB Exports Found.
+
+[+] Enumerating Medias (via Passive and Aggressive Methods) (Permalink setting must be set to "Plain" for those to be detected)
+
+ Brute Forcing Attachment IDs -: |=============================================|
+
+[i] No Medias Found.
+
+[+] Enumerating Users (via Passive and Aggressive Methods)
+
+ Brute Forcing Author IDs -: |=================================================|
+
+[i] User(s) Identified:
+
+[+] Maryna T
+ | Found By: Rss Generator (Passive Detection)
+ | Confirmed By: Rss Generator (Aggressive Detection)
+
+[+] admin
+ | Found By: Wp Json Api (Aggressive Detection)
+ |  - http://sts.sumy.ua/wp-json/wp/v2/users/?per_page=100&page=1
+ | Confirmed By: Author Id Brute Forcing - Author Pattern (Aggressive Detection)
+
+[+] maryna-t
+ | Found By: Wp Json Api (Aggressive Detection)
+ |  - http://sts.sumy.ua/wp-json/wp/v2/users/?per_page=100&page=1
+
+[+] galina
+ | Found By: Wp Json Api (Aggressive Detection)
+ |  - http://sts.sumy.ua/wp-json/wp/v2/users/?per_page=100&page=1
+
+[+] nadiya
+ | Found By: Wp Json Api (Aggressive Detection)
+ |  - http://sts.sumy.ua/wp-json/wp/v2/users/?per_page=100&page=1
+
+[+] sidash
+ | Found By: Wp Json Api (Aggressive Detection)
+ |  - http://sts.sumy.ua/wp-json/wp/v2/users/?per_page=100&page=1
+
+[+] migulin
+ | Found By: Wp Json Api (Aggressive Detection)
+ |  - http://sts.sumy.ua/wp-json/wp/v2/users/?per_page=100&page=1
+
+[+] redactor
+ | Found By: Author Id Brute Forcing - Author Pattern (Aggressive Detection)
+
+[+] WPVulnDB API OK
+ | Plan: free
+ | Requests Done (during the scan): 14
+ | Requests Remaining: 2
+
+[+] Finished: Tue Jul 28 12:18:36 2020
+[+] Requests Done: 3163
+[+] Cached Requests: 13
+[+] Data Sent: 746.704 KB
+[+] Data Received: 1.758 MB
+[+] Memory used: 233.832 MB
+[+] Elapsed time: 00:09:15

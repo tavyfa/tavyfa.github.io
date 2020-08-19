@@ -163,38 +163,9 @@
 
 .inst-card {
   position: relative; }
-  .inst-card:hover .inst-card__info {
-    opacity: 1; }
   .inst-card__link {
     display: block;
     background-size: cover;
     background-position: center;
     width: 100%;
     height: 100%; }
-  .inst-card__info {
-    transition: opacity .2s linear;
-    opacity: 0;
-    display: block;
-    position: relative;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8); }
-  .inst-card__info-inner {
-    width: 100%;
-    display: block;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-    color: white;
-    font-size: 16px; }
-  .inst-card__likes span {
-    font-size: 20px;
-    color: lightcoral; }
-  .inst-card__comments span {
-    font-size: 20px;
-    color: lightskyblue; }
